@@ -2,7 +2,9 @@
   <footer class="footer">
     <section class="container">
       {{ with .Site.Params.footerContent | safeHTML }}
-        <p>{{ . }}</p>
+        <p> {{ . }} </p>
+      {{ else }}
+        <p><i>Updated on {{ now.Format "January 2, 2006" }}</i></p>
       {{ end }}
       {{ if not .Site.Params.hideCopyright }}
         ©
