@@ -197,11 +197,29 @@ figure {
 }
 
 .float-right {
-  float: right;
+  text-align: center;
+  img {
+    width: 25%;
+  }
+  @media only screen and (min-width: 768px) {
+    img {
+      float: right;
+      margin: 0 0 2rem 2rem;
+    }
+  }
 }
 
 .float-left {
-  float: left;
+  text-align: center;
+  img {
+    width: 25%;
+  }
+  @media only screen and (min-width: 768px) {
+    img {
+      float: left;
+      margin: 0 0 2rem 2rem;
+    }
+  }
 }
 
 .fab {

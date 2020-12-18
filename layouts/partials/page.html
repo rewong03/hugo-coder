@@ -3,6 +3,7 @@
     <header>
       <h1>{{ .Title }}</h1>
     </header>
+    <i> Updated on {{ .Lastmod.Format "January 2, 2006" }} </i>
 
     {{ .Content }}
   </article>
