@@ -8,13 +8,30 @@
     {{- .Title -}}
   </h1>
   {{ .Content }}
-  <ul>
-    {{ range .Paginator.Pages }}
-    <li>
-      <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-      <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-    </li>
+  {{ if and (isset .Params "project_cards") (eq .Params.project_cards true) }}
+    <div class="project-grid">
+      {{ range .Paginator.Pages }}
+      <div class="project-card">
+        <div class="card-info">
+          <h1><img src="/images/repo.svg" style="padding-right: 5px; vertical-align:middle"> {{ .Title }}</h1>
+          <i><p>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</p></i>
+          <p>{{ .Summary | truncate 120 }}</p>
+          <a style="text-align:right" href="{{ .Params.externalLink | default .RelPermalink }}">Read More</a>
+        </div>
+      </div>
     {{ end }}
-  </ul>
-  {{ partial "pagination.html" . }}
+    </div>
+  {{ else }}
+    <ul>
+      {{ range .Paginator.Pages }}
+      <p> test </p>
+      <li>
+        <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+  {{ end }}
 </section>
+  

@@ -16,6 +16,10 @@
     color: $alt-fg-color-dark;
   }
 
+  p {
+    color: $alt-fg-color-dark;
+  }
+
   code {
     background-color: $alt-bg-color-dark;
     color: $fg-color-dark;
@@ -46,4 +50,9 @@ body.colorscheme-auto {
   @media (prefers-color-scheme: dark) {
     @include base_dark()
   }
+}
+
+.project-card {
+  background-color: #333333;
+  color: $alt-fg-color-dark;
 }
