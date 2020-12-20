@@ -40,6 +40,13 @@
     border: 2px solid $alt-fg-color-dark;
   }
 
+  .project-card {
+    background-color: #333333;
+    color: $fg-color-dark;
+    svg {
+      fill: $fg-color-dark;
+    }
+  }
 }
 
 body.colorscheme-dark {
@@ -52,7 +59,3 @@ body.colorscheme-auto {
   }
 }
 
-.project-card {
-  background-color: #333333;
-  color: $alt-fg-color-dark;
-}
