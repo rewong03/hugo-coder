@@ -19,18 +19,28 @@
           <div class="project-info">
             {{ if (isset .Params "description") }}
               <p>{{ .Params.description | truncate 120 }}</p>
+              <a style="text-align: right; float: right;" href="{{ .Params.externalLink | default .RelPermalink }}">Read More</a>
             {{ else }}
-              <p>{{ .Summary | truncate (index .Params "summary_length" | default 120) }}</p>
+              <p>{{ .Summary | truncate (index .Params "summary_length" | default 120) }}
+              <a href="{{ .Params.externalLink | default .RelPermalink }}">Read More</a>
+              </p>
             {{ end }}
           </div>
           <div>
-            {{ if (isset .Params "language") }}
-              {{ $language := .Params.Language }}
-              {{ $color := (index .Site.Data.language_colors $language).color }}
+            {{ if (isset .Params "gh_repo") }}
+              {{ $repo_path := urls.Parse .Params.gh_repo }}
+              {{ $repo_data := getJSON "https://api.github.com/" "repos" $repo_path.Path }}
+              {{ $color := (index .Site.Data.language_colors $repo_data.language).color }}
               <span class="repo-language-color" style="background-color:{{ $color }}"></span>
-              <span> {{ $language }} </span>
+              <span> {{ $repo_data.language }} </span>
+            {{ else }}
+              {{ if (isset .Params "language") }}
+                {{ $language := .Params.language }}
+                {{ $color := (index .Site.Data.language_colors $language).color }}
+                <span class="repo-language-color" style="background-color:{{ $color }}"></span>
+                <span> {{ $language }} </span>
+              {{ end }}
             {{ end }}
-            <a style="text-align: right; float: right;" href="{{ .Params.externalLink | default .RelPermalink }}">Read More</a>
           </div>
         </div>
       {{ end }}
