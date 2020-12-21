@@ -238,8 +238,8 @@ img.emoji {
 }
 
 .project-card {
-  background-color: #ededed;
-  box-shadow: 8px 8px 5px 0 rgba(0,0,0,0.2);
+  background-color: #EDEDED;
+  box-shadow: 1.5rem 1.5rem 1rem 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: auto;
   padding: 2rem 2rem 2rem 2rem;
@@ -248,50 +248,9 @@ img.emoji {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  svg {
-    fill: $fg-color;
-  }
-
-  h1 {
-    font-family: $heading-font-family;
-    color: $fg-color;
-    font-weight: 700;
-    margin: 0 2rem 0 0;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    @media only screen and (max-width : 768px) {
-      font-size: 1.8rem;
-      line-height: 1.8rem;
-    }
-  }
-
-  p {
-    color: $fg-color;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin: 1.0rem 0 1.0rem 0;
-  }
 }
 
 .project-info {
-  svg {
-    fill: $fg-color;
-  }
-
-  h1 {
-    font-family: $heading-font-family;
-    color: $fg-color;
-    font-weight: 700;
-    margin: 0 2rem 0 0;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    @media only screen and (max-width : 768px) {
-      font-size: 1.8rem;
-      line-height: 1.8rem;
-    }
-  }
-
   p {
     color: $fg-color;
     font-size: 1.5rem;
@@ -301,12 +260,38 @@ img.emoji {
 }
 
 .project-card:hover {
-  box-shadow: 16px 16px 5px 0 rgba(0,0,0,0.4);
+  box-shadow: 2rem 2rem 1rem 0 rgba(0,0,0,0.4);
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.project-title {
+  svg {
+    fill: $fg-color;
+  }
+
+  h1 {
+    font-family: $heading-font-family;
+    color: $fg-color;
+    font-weight: 700;
+    margin: 0 2rem 0 0;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    @media only screen and (max-width : 768px) {
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  p {
+    color: $fg-color;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 1.0rem 0 1.0rem 0;
+  }
 }
 
 .repo-language-color {
