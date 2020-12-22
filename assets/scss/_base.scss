@@ -292,6 +292,17 @@ img.emoji {
     line-height: 2rem;
     margin: 1.0rem 0 1.0rem 0;
   }
+  
+  a {
+    font-weight: 300;
+    color: $fg-color;
+    text-decoration: none;
+    transition: all .25s ease-in;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .repo-language-color {

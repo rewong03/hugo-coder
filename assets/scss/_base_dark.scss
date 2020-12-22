@@ -48,6 +48,19 @@
     }
   }
 
+  .project-title {
+    a {
+      font-weight: 300;
+      color: $fg-color-dark;
+      text-decoration: none;
+      transition: all .25s ease-in;
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .project-card:hover {
     box-shadow: 2.5rem 2.5rem 1rem 0 rgba(0,0,0,0.4);
   }
