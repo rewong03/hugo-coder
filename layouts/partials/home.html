@@ -9,7 +9,29 @@
       <div class="avatar"><img src="https://www.gravatar.com/avatar/{{md5 .}}?s=240&d=mp" alt="gravatar"></div>
     {{ end }}
     <h1>{{ .Site.Params.author }}</h1>
-    <h2>{{ .Site.Params.info }}</h2>
+    <div style="display: inline">
+      <div style="display: inline-block">
+        <h2>&gt;</h2>
+      </div>
+      <div id="typewriter" style="display: inline-block">
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script type="text/javascript">
+          const typewriter = new Typewriter('#typewriter', {
+            cursor: "<h2 style='display: inline'>&#x258c;</h2>",
+          });
+      
+          typewriter.typeString("<h2 style='display: inline'>{{ .Site.Params.info }} </h2>")
+            .callFunction(() => {
+              console.log('String typed out!');
+            })
+            .pauseFor(2500)
+            .callFunction(() => {
+              console.log('All strings were deleted');
+            })
+            .start();
+        </script>
+      </div>
+    </div>
     {{ with .Site.Params.social }}
     <ul>
       {{ range sort . "weight" }}
