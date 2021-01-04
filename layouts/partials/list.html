@@ -28,7 +28,7 @@
             {{ end }}
             <i><p>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</p></i>
           </div>
-          <div class="project-info">
+          <div class="project-description">
             {{ if (isset .Params "description") }}
               <p>{{ .Params.description | truncate 120 }}</p>
               <a style="text-align: right; float: right;" href="{{ .Params.externalLink | default .RelPermalink }}">Read More</a>
@@ -38,13 +38,17 @@
               </p>
             {{ end }}
           </div>
-          <div>
+          <div class="project-stats">
             {{ if (isset .Params "gh_repo") }}
               {{ $repo_path := urls.Parse .Params.gh_repo }}
               {{ $repo_data := getJSON "https://api.github.com/" "repos" $repo_path.Path }}
               {{ $color := (index .Site.Data.language_colors $repo_data.language).color }}
               <span class="repo-language-color" style="background-color:{{ $color }}"></span>
               <span> {{ $repo_data.language }} </span>
+              <a href={{ .Params.gh_repo }} target="_blank">
+                <span><svg viewBox="0 0 14 16" version="1.1" width="2rem" height="2rem" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg></span>
+                <span> {{ $repo_data.stargazers_count }} </span>
+              </a>
             {{ else }}
               {{ if (isset .Params "language") }}
                 {{ $language := .Params.language }}

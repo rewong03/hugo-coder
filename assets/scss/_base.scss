@@ -250,7 +250,7 @@ img.emoji {
   justify-content: space-between;
 }
 
-.project-info {
+.project-description {
   p {
     color: $fg-color;
     font-size: 1.5rem;
@@ -305,6 +305,16 @@ img.emoji {
   }
 }
 
+.project-stats {
+  svg {
+    fill: $fg-color;
+    position: relative;
+    top: 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 0.3rem;
+  }
+}
+
 .repo-language-color {
   filter: brightness(125%) !important;
   border-radius: 50%;
@@ -313,5 +323,5 @@ img.emoji {
   position: relative;
   width: 1.5rem;
   top: 0.3rem;
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
