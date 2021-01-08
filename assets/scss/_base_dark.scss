@@ -40,7 +40,7 @@
     border: 2px solid $alt-fg-color-dark;
   }
 
-  .project-card {
+  .gh-card {
     background-color: #333333;
     color: $fg-color-dark;
     svg {
@@ -48,7 +48,7 @@
     }
   }
 
-  .project-title {
+  .gh-title {
     a {
       font-weight: 300;
       color: $fg-color-dark;
@@ -61,8 +61,60 @@
     }
   }
 
-  .project-card:hover {
+  .gh-card:hover {
     box-shadow: 2.5rem 2.5rem 1rem 0 rgba(0,0,0,0.4);
+  }
+  
+  .arrows {
+    width: 120px;
+    height: 73px;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    bottom: 20px;
+  }
+
+  .arrows path {
+    stroke: $fg-color-dark;
+    fill: transparent;
+    stroke-width: 3px;	
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+  }
+
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+
+  .arrows path.a3 {	
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+  }
+
+  .project-section-light {
+    background-color: $alt-bg-color-dark;
   }
 }
 
@@ -75,4 +127,3 @@ body.colorscheme-auto {
     @include base_dark()
   }
 }
-

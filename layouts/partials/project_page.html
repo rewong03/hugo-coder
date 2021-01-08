@@ -1,0 +1,50 @@
+<section class="project-title-section">
+  <div>
+    <div class="project-title">
+      <h1>{{ .Title }}</h1>
+    </div>
+    {{ with .Params.short_description }}
+      <div class="project-description">
+        <p>{{ . }}</p>
+      </div>
+    {{ end }}
+    {{ if (or (or (isset .Params "technologies") (isset .Params "team")) (isset .Params "time")) }}
+      <div class="project-info-row">
+        {{ with .Params.technologies }}
+          <div class="project-tech">
+            <h6>TECH</h6>
+            <p>{{ delimit . ", "}}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.team }}
+          <div class="project-team">
+            <h6>TEAM</h6>
+            <p>{{ delimit . ", " }}</p>
+          </div>
+        {{ end }}
+        {{ with .Params.time }}
+          <div class="project-time">
+            <h6>TIME</h6>
+            <p>{{ . }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>  
+</section>
+<section>
+  <svg class="arrows">
+    <path class="a1" d="M0 0 L60 32 L120 0"></path>
+    <path class="a2" d="M0 20 L60 52 L120 20"></path>
+    <path class="a3" d="M0 40 L60 72 L120 40"></path>
+  </svg>
+</section>
+{{ range ( findRE `\[(.*)\]:<br>[\s\S]*?\[END]` .Content ) }}
+  {{ $rawSectionTitle := index (findRE `\[(.*)\]:<br>` .) 0 }}
+  {{ $sectionTitle := (substr $rawSectionTitle 1 -6) }}
+  {{ $sectionContent := (substr . (add (len $sectionTitle) 7) (mul -1 5)) }}
+  <section>
+    <h3>{{ $sectionTitle }}</h3>
+    {{ safeHTML (print "<p>" $sectionContent "</p>") }}
+  </section>
+{{ end }}

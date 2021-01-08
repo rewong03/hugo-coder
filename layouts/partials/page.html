@@ -1,10 +1,15 @@
-<section class="container page">
-  <article>
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
-    <i> Updated on {{ .Lastmod.Format "January 2, 2006" }} </i>
-
-    {{ .Content }}
-  </article>
-</section>
+{{ if and (isset .Params "project_page") (eq .Params.project_page true) }}
+  <section class="container page" style="display: flex; flex-direction: column;">
+    {{ partial "project_page.html" . }}
+  </section>
+{{ else }}
+  <section class="container page">
+    <article>  
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <i> Updated on {{ .Lastmod.Format "January 2, 2006" }} </i>
+      {{ .Content }}
+    </article>
+  </section>
+{{ end }}
