@@ -20,14 +20,8 @@
             cursor: "<h2 style='display: inline'>&#x258c;</h2>",
           });
       
-          typewriter.typeString("<h2 style='display: inline'>{{ .Site.Params.info }} </h2>")
-            .callFunction(() => {
-              console.log('String typed out!');
-            })
+          typewriter.typeString("<h2 style='display: inline'>{{ .Site.Params.info }}</h2>")
             .pauseFor(2500)
-            .callFunction(() => {
-              console.log('All strings were deleted');
-            })
             .start();
         </script>
       </div>
