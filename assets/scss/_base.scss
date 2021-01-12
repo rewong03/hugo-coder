@@ -333,8 +333,10 @@ img.emoji {
 }
 
 .project-title {
+  transition-timing-function: ease-in;
   display: flex;
   align-items: center;
+  opacity: 0;
   h1 {
     font-size: 5rem;
     margin-top: 3.2rem;
@@ -346,6 +348,8 @@ img.emoji {
 }
 
 .project-description {
+  transition-timing-function: ease-in;
+  opacity: 0;
   p {
     font-size: 2.2rem;
     font-weight: lighter;
@@ -359,6 +363,8 @@ img.emoji {
 }
 
 .project-tech {
+  transition-timing-function: ease-in;
+  opacity: 0;
   margin-right: 2rem;
   width: 15rem;
 
@@ -376,6 +382,8 @@ img.emoji {
 }
 
 .project-team {
+  transition-timing-function: ease-in;
+  opacity: 0;
   margin-right: 2rem;
   width: 15rem;
 
@@ -393,6 +401,8 @@ img.emoji {
 }
 
 .project-time {
+  transition-timing-function: ease-in;
+  opacity: 0;
   margin-right: 2rem;
   width: 15rem;
 

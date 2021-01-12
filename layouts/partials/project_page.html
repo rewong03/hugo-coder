@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{ $animateScript := resources.Get "js/animate-project-title.js" | minify | fingerprint }}
+<script src="{{ $animateScript.RelPermalink }}"></script>
 <section class="project-title-section">
   <div>
     <div class="project-title">
@@ -33,7 +36,6 @@
   </div>  
 </section>
 <section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   {{ $script := resources.Get "js/scroll-arrow.js" | minify | fingerprint }}
   <script src="{{ $script.RelPermalink }}"></script>
   <svg class="arrows">
