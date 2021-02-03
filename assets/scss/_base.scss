@@ -422,6 +422,9 @@ img.emoji {
 
 .project-title-image {
   opacity: 0;
+  svg {
+    fill: $fg-color;
+  }
 }
 
 .arrows {

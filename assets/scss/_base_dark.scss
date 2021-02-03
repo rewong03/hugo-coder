@@ -113,8 +113,10 @@
     -webkit-animation-delay:0s; /* Safari 和 Chrome */
   }
 
-  .project-section-light {
-    background-color: $alt-bg-color-dark;
+  .project-title-image {
+    svg {
+      fill: $fg-color-dark;
+    }
   }
 }
 

@@ -34,16 +34,10 @@
       </div>
     {{ end }}
   </div>
-  {{ if (isset .Params "project_image_type") }}
-    {{ if (and (isset .Params "project_image_file") (isset .Params "project_image_style")) }}
-      {{ if (eq .Params.project_image_type "svg") }}
-        <div class="project-title-image">
-          {{ safeHTML .Params.project_image_style }}
-            <path d="{{ readFile .Params.project_image_file }}"/>
-          </svg>
-        </div>
-      {{ end }}
-    {{ end }}
+  {{ if (isset .Params "project_image_tag_file")}}
+    <div class="project-title-image">
+      {{ safeHTML (readFile .Params.project_image_tag_file) }}
+    </div>
   {{ end }}  
 </section>
 <section>
