@@ -14,4 +14,11 @@ $(document).ready(function(){
   setTimeout(function(){
     $('.project-time').animate({'opacity': 1}, 2000);
   }, 500)
+  setTimeout(function(){
+    $('.project-title-image').animate({'opacity': 1}, 2000);
+  }, 600)
 })
+
+$(window).scroll(function(){
+    $(".project-title-section").css("opacity", 1 - $(window).scrollTop() / 500);
+});

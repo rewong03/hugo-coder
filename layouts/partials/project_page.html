@@ -33,7 +33,18 @@
         {{ end }}
       </div>
     {{ end }}
-  </div>  
+  </div>
+  {{ if (isset .Params "project_image_type") }}
+    {{ if (and (isset .Params "project_image_file") (isset .Params "project_image_style")) }}
+      {{ if (eq .Params.project_image_type "svg") }}
+        <div class="project-title-image">
+          {{ safeHTML .Params.project_image_style }}
+            <path d="{{ readFile .Params.project_image_file }}"/>
+          </svg>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}  
 </section>
 <section>
   {{ $script := resources.Get "js/scroll-arrow.js" | minify | fingerprint }}
