@@ -1,0 +1,148 @@
+.project-title-section {
+  justify-content: space-between;
+  height: calc(100vh - 86px);
+  display: flex;
+  align-items: center;
+}
+
+.project-title {
+  transition-timing-function: ease-in;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  h1 {
+    font-size: 5rem;
+    margin-top: 3.2rem;
+    @media only screen and (max-width : 768px) {
+      font-size: 3.0rem;
+      line-height: 3.4rem;
+    }
+  }
+}
+
+.project-description {
+  transition-timing-function: ease-in;
+  opacity: 0;
+  p {
+    font-size: 2.2rem;
+    font-weight: lighter;
+    max-width: 40rem;
+  }
+}
+
+.project-info-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-tech {
+  transition-timing-function: ease-in;
+  opacity: 0;
+  margin-right: 2rem;
+  width: 15rem;
+
+  h6 {
+    margin-block-start: 3.2rem;
+    margin-block-end: 1rem;
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+
+.project-team {
+  transition-timing-function: ease-in;
+  opacity: 0;
+  margin-right: 2rem;
+  width: 15rem;
+
+  h6 {
+    margin-block-start: 3.2rem;
+    margin-block-end: 1rem;
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+
+.project-time {
+  transition-timing-function: ease-in;
+  opacity: 0;
+  margin-right: 2rem;
+  width: 15rem;
+
+  h6 {
+    margin-block-start: 3.2rem;
+    margin-block-end: 1rem;
+    font-size: 1.7rem;
+    font-weight: lighter;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+
+.project-title-image {
+  opacity: 0;
+  svg {
+    fill: $fg-color;
+  }
+}
+
+.arrows {
+	width: 120px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -60px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: $fg-color;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}

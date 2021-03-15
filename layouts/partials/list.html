@@ -9,7 +9,7 @@
   </h1>
   {{ .Content }}
   {{ if and (isset .Params "is_gh_projects") (eq .Params.is_gh_projects true) }}
-    {{ partial "gh_projects.html" . }}
+    {{ partial "project_list.html" . }}
   {{ else }}
     <ul>
       {{ range .Paginator.Pages }}

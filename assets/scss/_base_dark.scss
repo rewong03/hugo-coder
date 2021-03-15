@@ -17,7 +17,7 @@
   }
 
   p {
-    color: $alt-fg-color-dark;
+    color: $fg-color-dark;
   }
 
   code {
@@ -38,86 +38,7 @@
 
   table td, table th {
     border: 2px solid $alt-fg-color-dark;
-  }
-
-  .gh-card {
-    background-color: #333333;
-    color: $fg-color-dark;
-    svg {
-      fill: $fg-color-dark;
-    }
-  }
-
-  .gh-title {
-    a {
-      font-weight: 300;
-      color: $fg-color-dark;
-      text-decoration: none;
-      transition: all .25s ease-in;
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .gh-card:hover {
-    box-shadow: 2.5rem 2.5rem 1rem 0 rgba(0,0,0,0.4);
-  }
-  
-  .arrows {
-    width: 120px;
-    height: 73px;
-    position: absolute;
-    left: 50%;
-    margin-left: -60px;
-    bottom: 20px;
-  }
-
-  .arrows path {
-    stroke: $fg-color-dark;
-    fill: transparent;
-    stroke-width: 3px;	
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite; 
-  }
-
-  @keyframes arrow
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-
-  @-webkit-keyframes arrow /*Safari and Chrome*/
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-
-  .arrows path.a1 {
-    animation-delay:-1s;
-    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
-  }
-
-  .arrows path.a2 {
-    animation-delay:-0.5s;
-    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
-  }
-
-  .arrows path.a3 {	
-    animation-delay:0s;
-    -webkit-animation-delay:0s; /* Safari 和 Chrome */
-  }
-
-  .project-title-image {
-    svg {
-      fill: $fg-color-dark;
-    }
-  }
+  } 
 }
 
 body.colorscheme-dark {

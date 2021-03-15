@@ -1,7 +1,7 @@
 <div class="about">
-  <div style="float: left; margin-left: 10em">
+  <div class="about-left">
     {{ with .Params.headshot }}
-      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar" class="avatar" style="width: 30rem; border-radius: 5%"></div>
+      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar" class="avatar"></div>
     {{ end }}
     {{ with .Params.social }}
       <ul>
@@ -21,7 +21,7 @@
       </ul>
     {{ end }}
   </div>
-  <div style="float: right; width: 50%; text-align: left">
+  <div class="about-right">
     {{ .Content }}
   </div>  
 </div>
