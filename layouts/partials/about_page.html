@@ -1,0 +1,27 @@
+<div class="about">
+  <div style="float: left; margin-left: 10em">
+    {{ with .Params.headshot }}
+      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar" class="avatar" style="width: 30rem; border-radius: 5%"></div>
+    {{ end }}
+    {{ with .Params.social }}
+      <ul>
+        {{ range sort . "weight" }}
+          {{ if .icon }}
+            <li>
+              <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }} {{ if .type }}type="{{ .type }}"{{ end }} style="margin-left: 1.5rem; margin-right: 1.5rem">
+                <i class="{{ .icon }}" aria-hidden="true"></i>
+              </a>
+            </li>
+          {{ else }}
+            <li>
+              <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }}>{{ .name }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+  <div style="float: right; width: 50%; text-align: left">
+    {{ .Content }}
+  </div>  
+</div>

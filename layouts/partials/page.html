@@ -1,6 +1,10 @@
 {{ if and (isset .Params "project_page") (eq .Params.project_page true) }}
-  <section class="container page" style="display: flex; flex-direction: column;">
+  <section class="container" style="display: flex; flex-direction: column;">
     {{ partial "project_page.html" . }}
+  </section>
+{{ else if and (isset .Params "about_page") (eq .Params.about_page true) }}
+  <section class="container centered" style="justify-content: right">
+    {{ partial "about_page.html" . }}
   </section>
 {{ else }}
   <section class="container page">
@@ -8,7 +12,9 @@
       <header>
         <h1>{{ .Title }}</h1>
       </header>
-      <i> Updated on {{ .Lastmod.Format "January 2, 2006" }} </i>
+      {{ if (not (and (isset .Params "show_last_updated") (eq .Params.show_last_updated false))) }}
+      	<i> Updated on {{ .Lastmod.Format "January 2, 2006" }} </i>
+      {{ end }}
       {{ .Content }}
     </article>
   </section>
